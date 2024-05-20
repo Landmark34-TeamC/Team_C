@@ -1,22 +1,19 @@
-# Copyright (c) HashiCorp, Inc.
-# SPDX-License-Identifier: MPL-2.0
-
-output "cluster_endpoint" {
-  description = "Endpoint for EKS control plane"
-  value       = module.eks.cluster_endpoint
+output "jenkins_server_public_ip" {
+  description = "Public IP address of the Jenkins server"
+  value       = module.jenkins_server.jenkins_server_public_ip
 }
 
-output "cluster_security_group_id" {
-  description = "Security group ids attached to the cluster control plane"
-  value       = module.eks.cluster_security_group_id
+output "terraform_node_public_ip" {
+  description = "Public IP address of the Terraform node"
+  value       = module.terraform_node.terraform_node_public_ip
 }
 
-output "region" {
-  description = "AWS region"
-  value       = var.region
+output "s3_bucket" {
+  description = "Name of the S3 bucket for Terraform state"
+  value       = module.s3_dynamodb.bucket
 }
 
-output "cluster_name" {
-  description = "Kubernetes Cluster Name"
-  value       = module.eks.cluster_name
+output "dynamodb_table" {
+  description = "Name of the DynamoDB table for state locking"
+  value       = module.s3_dynamodb.table
 }
