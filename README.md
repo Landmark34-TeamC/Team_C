@@ -1,4 +1,3 @@
-Certainly! Here is an improved `README.md` with a more descriptive title:
 # CI/CD Pipeline with Jenkins and Terraform
 
 ## Overview
